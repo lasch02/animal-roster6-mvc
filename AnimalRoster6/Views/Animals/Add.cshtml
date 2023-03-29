@@ -1,13 +1,28 @@
-﻿<h1>Add An Animal To Your Roster! 🙂</h1>
+﻿@using AnimalRoster6.ViewModels;
+@model AddAnimalViewModel;
 
-<form method="post" class="form-group">
-    <label for="name">Name</label>
-    <input name="name" type="text" class="form-control" />
-    <label for="species">Species</label>
-    <input name="species" type="text" class="form-control" />
-    <label for="desc">Description</label>
-    <input name="desc" type="text" class="form-control" />
-    <label for="imgUrl">Image URL</label>
-    <input name="imgUrl" type="text" class="form-control" />
+<h1>Add An Animal To Your Roster! 🙂</h1>
+
+<form method="post">
+    <div asp-controller="Animals" asp-action="Add" class="form=group">
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" type="text" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div asp-controller="Animals" asp-action="Add" class="form=group">
+        <label asp-for="Species">Species</label>
+        <input asp-for="Species" type="text" class="form-control" />
+        <span asp-validation-for="Species" class="text-danger"></span>
+    </div>
+    <div asp-controller="Animals" asp-action="Add" class="form=group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" type="text" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div asp-controller="Animals" asp-action="Add" class="form=group">
+        <label asp-for="ImgUrl">Image URL</label>
+        <input asp-for="ImgUrl" type="text" class="form-control" />
+        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+    </div>
     <input type="submit" value="Add Animal" class="btn btn-primary" />
 </form>

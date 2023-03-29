@@ -1,4 +1,7 @@
-﻿<h1>Our Animals</h1>
+﻿@using AnimalRoster6.Models;
+@model List<Animal>
+
+<h1>Our Animals</h1>
 @if (ViewBag.animals.Count == 0)
 {
     <h2>You don't have any animals! Go and add some to the roster, dude.</h2>
@@ -7,6 +10,10 @@ else
 {
     <table class="table table-striped table-bordered">
         <tr>
+            <th scope="col">
+                Id
+            </th>
+            
             <th scope="col">
                 Name
             </th>
@@ -17,23 +24,16 @@ else
                 Description
             </th>
             <th scope="col">
-                Image
+                Image Link
             </th>
         </tr>
-        @foreach (Dictionary<string, string> animal in ViewBag.animals)
+        @foreach (Animal animal in Model)
         {
             <tr>
-                @foreach (KeyValuePair<string, string> kvp in animal)
-                {
-                    if (kvp.Key == "imgUrl")
-                    {
-                        <td><img src="@kvp.Value" width="10%" /></td>
-                    }
-                    else
-                    {
-                        <td>@kvp.Value</td>
-                    }
-                }
+                <td>@animal.Name</td>
+                <td>@animal.Species</td>
+                <td>@animal.Description</td>
+                <td><a href="@animal.ImgUrl"> Check me out! </a></td>
             </tr>
         }
     </table>
