@@ -20,9 +20,13 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
     <div asp-controller="Animals" asp-action="Add" class="form=group">
-        <label asp-for="ImgUrl">Image URL</label>
-        <input asp-for="ImgUrl" type="text" class="form-control" />
-        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" type="text" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div asp-controller="Animals" asp-action="Add" class="form=group">
+        <label asp-for="Handler">Handler</label>
+        <select asp-for="Handler" class="text-danger"></select>
     </div>
     <input type="submit" value="Add Animal" class="btn btn-primary" />
 </form>

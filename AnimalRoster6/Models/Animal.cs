@@ -7,6 +7,7 @@
         public string? Species { get; set; }
         public string? Description { get; set; }
         public string? ImgUrl { get; set; }
+        public AnimalHandler Handler { get; set; }
         private static int nextId = 1;
         public int Id { get; }
 
@@ -17,6 +18,7 @@
             Species = species;
             Description = description;
             ImgUrl = imgUrl;
+            Handler = handler;
         }
 
         public Animal()

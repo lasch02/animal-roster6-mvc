@@ -39,6 +39,7 @@ namespace AnimalRoster6.Controllers
                     Name = addAnimalViewModel.Name,
                     Species = addAnimalViewModel.Species,
                     Description = addAnimalViewModel.Description,
+                    Handler = addAnimalViewModel.Handler,
                     ImgUrl = addAnimalViewModel.ImgUrl
                 };
 
